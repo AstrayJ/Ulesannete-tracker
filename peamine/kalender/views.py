@@ -10,6 +10,6 @@ def home_page_view(request):
    return render(request,"LandingPage.html")
 
 def login_page_view(request):
-   return render(request, "index.html", "style.css")
+   return render(request, "index.html")
 
 
