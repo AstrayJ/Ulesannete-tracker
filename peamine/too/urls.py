@@ -24,4 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('kalender/', home_page_view),
+
+    
 ]
