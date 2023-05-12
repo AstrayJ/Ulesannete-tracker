@@ -20,5 +20,5 @@ from kalender.views import home_page_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_page_view),
+    path('kalnder/', home_page_view),
 ]
