@@ -21,4 +21,5 @@ from kalender.views import home_page_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('kalender/', home_page_view),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]
