@@ -16,15 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
 from kalender.views import home_page_view
 from kalender.views import login_page_view
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     path('kalender/', home_page_view),
-<<<<<<< HEAD
-    path("login/", login_page_view),
-=======
     path("accounts/", include("django.contrib.auth.urls")),
->>>>>>> 88a3aa3d38736a406f3c9642419a1763fe2783c5
 ]

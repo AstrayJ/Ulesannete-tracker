@@ -31,13 +31,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
+    "kalender"
+=======
     'kalender'
+>>>>>>> 88a3aa3d38736a406f3c9642419a1763fe2783c5
 ]
 
 MIDDLEWARE = [
