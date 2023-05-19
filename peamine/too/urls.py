@@ -19,6 +19,7 @@ from django.urls import path, include
 
 from kalender.views import home_page_view
 from kalender.views import login_page_view
+from kalender.views import register_page_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
