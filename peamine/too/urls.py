@@ -28,7 +28,11 @@ urlpatterns = [
     path("login/", login_page_view),
     path("register/", register_page_view),
 <<<<<<< HEAD
+<<<<<<< HEAD
     path("kalender/", include ('kal.urls')),
+=======
+    path("kalender/", include('kalender.urls')),
+>>>>>>> 7920171e3eedd96c60a6a26b57df0a6acc2a0401
 =======
 <<<<<<< HEAD
 =======

@@ -28,3 +28,6 @@ def register_page_view(request):
       messages.error(request, "Unsuccessful registration. Invalid information.")
    form = NewUserForm()
    return render (request=request, template_name="main/register.html", context={"register_form":form})
+
+def index(request):
+    return HttpResponse('hello')

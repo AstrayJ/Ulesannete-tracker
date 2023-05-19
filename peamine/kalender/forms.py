@@ -8,10 +8,6 @@ from django.contrib.auth.models import User
 =======
 from django.forms import ModelForm
 
-	
-	class Meta:
-		model = 
-		fields = ("",)
 
 
 >>>>>>> f726452b778ad5e6e15ee4fe5a4249665ad5befb
@@ -33,6 +29,10 @@ class NewUserForm(UserCreationForm):
 =======
 		return user
 
+<<<<<<< HEAD
+
+=======
 class UploadEvent(ModlelFrom):
 	
 >>>>>>> f726452b778ad5e6e15ee4fe5a4249665ad5befb
+>>>>>>> 80d43841a9ef19586ae3d60dd91f6ed00326450a
