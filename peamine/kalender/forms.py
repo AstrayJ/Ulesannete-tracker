@@ -3,10 +3,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 
-	
-	class Meta:
-		model = 
-		fields = ("",)
 
 
 
@@ -24,5 +20,4 @@ class NewUserForm(UserCreationForm):
 			user.save()
 		return user
 
-class UploadEvent(ModlelFrom):
-	
+
