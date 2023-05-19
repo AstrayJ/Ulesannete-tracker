@@ -27,4 +27,5 @@ urlpatterns = [
     path('homepage/', home_page_view),
     path("login/", login_page_view),
     path("register/", register_page_view),
+    path("kalender/", include ('kal.urls'),
 ]
