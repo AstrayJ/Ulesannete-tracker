@@ -2,14 +2,24 @@
 
 {% block content %} 
 
+<<<<<<< HEAD
 {% load crispy_forms_tags %}         
+=======
+{% load crispy_forms_tags %} 
+
+{% load epic_tags %}
+>>>>>>> f726452b778ad5e6e15ee4fe5a4249665ad5befb
 
 <!--Register--> 
 <div class="container py-5">
 	<h1>Register</h1>
 	<form method="POST">
 		{% csrf_token %}
+<<<<<<< HEAD
 		{{ register_form|crispy }}                    
+=======
+        {{ register_form|crispy }}                   
+>>>>>>> f726452b778ad5e6e15ee4fe5a4249665ad5befb
 		<button class="btn btn-primary" type="submit">Register</button>
 	</form>
 	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
