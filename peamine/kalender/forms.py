@@ -27,7 +27,7 @@ class NewUserForm(UserCreationForm):
 
 		return user
 
-		return user
+		
 
 
 #class UploadEvent(ModlelFrom):
