@@ -1,13 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
-
-
-# Create your forms here.
-
 from django.forms import ModelForm
-
 
 
 
@@ -26,9 +20,4 @@ class NewUserForm(UserCreationForm):
 			user.save()
 
 		return user
-
-		
-
-
-#class UploadEvent(ModlelFrom):
 
