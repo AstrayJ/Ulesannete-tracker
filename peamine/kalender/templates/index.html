@@ -125,9 +125,18 @@
     <input type="password" placeholder="Password" required/>                         </div>
   
   <div class="form-field">
-    <button class="btn" type="submit">Log in</button>
+    <button class="btn" type="submit" onclick="redirectToHomepage()">Log in</button>
   </div>
 </form>
+
+<script>
+  function redirectToHomepage() {
+  // Perform any necessary login validation or other actions here
+  
+  // Redirect the user to the homepage
+  window.location.href = "{% url 'cal:kalender' %}";
+}
+</script>
 <!-- partial -->
   
 </body>
