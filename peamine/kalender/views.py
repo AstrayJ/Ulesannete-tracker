@@ -29,7 +29,7 @@ def register_page_view(request):
    return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 def index(request):
-    return render(request, 'KALENDER.html', locals())
+    return render(request, 'KALENDER2.html', locals())
 
 
 
