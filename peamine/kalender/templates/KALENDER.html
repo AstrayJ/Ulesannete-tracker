@@ -1,4 +1,4 @@
-{'% load staticfiles %}
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -14,8 +14,64 @@
 </head>
 <body>
 
-  {'% block content %}
-  {'% endblock %}
+  {% block content %}
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="7">May 2023</th>
+      </tr>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+      <!-- Continue adding rows for each week -->
+      <tr>
+        <td>29</td>
+        <td>30</td>
+        <td>31</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+  {% endblock %}
 
 </body>
 </html>
