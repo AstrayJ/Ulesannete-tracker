@@ -29,7 +29,7 @@ def register_page_view(request):
    return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 def index(request):
-    return render(request, 'KALENDER2.html', locals())
+    return render(request, 'KALENDER.html', locals())
 
 
 
@@ -56,3 +56,22 @@ def get_date(req_day):
         year, month = (int(x) for x in req_day.split('-'))
         return date(year, month, day=1)
     return datetime.today()
+
+from django.shortcuts import render
+
+def target_page(request):
+    if request.method == 'POST':
+        # Retrieve the user's input from the form
+        user_input = request.POST.get('user_input')
+
+        # Process the user's input or perform any necessary operations
+
+        # Return a response or render a new template based on the input
+
+        # For example, render a template with the input data
+        return render(request, 'kalendertopage.html', {'user_input': user_input})
+    else:
+        return render(request, 'kalendertopage.html')
+    
+def peale_input(request):
+    return render(request, "pealeinput.html")
