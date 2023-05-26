@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Input Form</title>
+  {% load static %}
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 300px; /* Adjust the width as needed */
+      height: 30px; /* Adjust the height as needed */
+      font-size: 40px; /* Adjust the font size as needed */
+    }
+  </style>
+</head>
+<body>
+  <form method="post" action="process-input.php">
+    {% csrf_token %}
+    <label for="user_input1">Sisesta sündmus:</label>
+    <br>
+    <input type="text" id="user_input1" name="user_input1" required>
+    <br>
+    <label for="user_input2">Sisesta kuupäev:</label>
+    <br>
+    <input type="text" id="user_input2" name="user_input2" required>
+    <br>
+    <button type="submit">Salvesta sündmus</button>
+  </form>
+</body>
+</html>

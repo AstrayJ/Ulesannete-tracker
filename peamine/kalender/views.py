@@ -1,4 +1,5 @@
-from datetime import datetime
+from __future__ import unicode_literals
+from django.shortcuts import render
 from django.contrib.auth import login
 from django.contrib import messages
 from django.http.response import HttpResponse
@@ -7,7 +8,7 @@ from django.utils.safestring import mark_safe
 from django.shortcuts import  render, redirect
 from .forms import NewUserForm
 from .models import *
-from .utils import Calendar
+
  
 def home_page_view(request):
    return render(request,"LandingPage.html")
@@ -26,10 +27,11 @@ def register_page_view(request):
          return redirect("main:homepage")
       messages.error(request, "Unsuccessful registration. Invalid information.")
    form = NewUserForm()
+<<<<<<< HEAD
    return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 def index(request):
-    return render(request, 'KALENDER2.html', locals())
+    return render(request, 'KALENDER.html', locals())
 
 
 
@@ -56,3 +58,25 @@ def get_date(req_day):
         year, month = (int(x) for x in req_day.split('-'))
         return date(year, month, day=1)
     return datetime.today()
+
+from django.shortcuts import render
+
+def target_page(request):
+    if request.method == 'POST':
+        # Retrieve the user's input from the form
+        user_input = request.POST.get('user_input')
+
+        # Process the user's input or perform any necessary operations
+
+        # Return a response or render a new template based on the input
+
+        # For example, render a template with the input data
+        return render(request, 'kalendertopage.html', {'user_input': user_input})
+    else:
+        return render(request, 'kalendertopage.html')
+    
+def peale_input(request):
+    return render(request, "pealeinput.html")
+=======
+   return render (request=request, template_name="main/register.html", context={"register_form":form})
+>>>>>>> 50b9d17059731225f50ec31db7ceb18e9df78b43
