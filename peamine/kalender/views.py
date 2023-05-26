@@ -1,4 +1,5 @@
-from datetime import datetime
+from __future__ import unicode_literals
+from django.shortcuts import render
 from django.contrib.auth import login
 from django.contrib import messages
 from django.http.response import HttpResponse
@@ -7,7 +8,7 @@ from django.utils.safestring import mark_safe
 from django.shortcuts import  render, redirect
 from .forms import NewUserForm
 from .models import *
-from .utils import Calendar
+
  
 def home_page_view(request):
    return render(request,"LandingPage.html")
@@ -26,6 +27,7 @@ def register_page_view(request):
          return redirect("main:homepage")
       messages.error(request, "Unsuccessful registration. Invalid information.")
    form = NewUserForm()
+<<<<<<< HEAD
    return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 def index(request):
@@ -75,3 +77,6 @@ def target_page(request):
     
 def peale_input(request):
     return render(request, "pealeinput.html")
+=======
+   return render (request=request, template_name="main/register.html", context={"register_form":form})
+>>>>>>> 50b9d17059731225f50ec31db7ceb18e9df78b43
