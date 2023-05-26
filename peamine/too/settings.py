@@ -39,16 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "kalender",
-<<<<<<< HEAD
     
-=======
-<<<<<<< HEAD
     
-=======
-    "crispy_forms",
-    "crispy_bootstrap4",
->>>>>>> f726452b778ad5e6e15ee4fe5a4249665ad5befb
->>>>>>> 80d43841a9ef19586ae3d60dd91f6ed00326450a
+    
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -130,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
