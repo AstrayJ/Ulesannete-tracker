@@ -30,11 +30,7 @@ urlpatterns = [
     path("login/", login_page_view),
     path("register/", register_page_view),
     path("kalender/", include('kalender.urls')),
-<<<<<<< HEAD
-=======
-    path("kalender/", include('kalender.urls')),
     path("kalender/target-page/", target_page),
     path("kalender/target-page/process-input.php", peale_input)
 
->>>>>>> 8aa0af13d588ab2f7eba01338e963155f75ee6f0
 ]
