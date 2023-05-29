@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "kalender",
     'crispy_forms',
     "crispy_bootstrap4",
-    "channels,"
+    "channels",
     
 
 ]
