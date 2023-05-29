@@ -39,9 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "kalender",
+<<<<<<< HEAD
     
     
     
+=======
+    'crispy_forms',
+    "crispy_bootstrap4",
+    "channels",
+>>>>>>> 91d21f0476f03e880c3fd1fb46e8b85f3313e11b
     
 
 ]
