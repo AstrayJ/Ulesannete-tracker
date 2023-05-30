@@ -13,7 +13,6 @@ from django.urls import reverse
 import calendar
 from .utils import Calendar
 from .forms import EventForm
- 
 def home_page_view(request):
    return render(request,"LandingPage.html")
 
@@ -80,7 +79,7 @@ def target_page(request):
     
 def peale_input(request):
     return render(request, "pealeinput.html")
-    return render (request=request, template_name="main/register.html", context={"register_form":form})
+    return render(request=request, template_name="main/register.html", context={"register_form":form})
 
 
 def index(request):

@@ -6,7 +6,7 @@ Event
 
 {% block content %}
 <div class="clearfix">
-  <a class="btn btn-info left" href="{% url 'cal:kalener' %}"> Kalender </a>
+  <a class="btn btn-info left" href=" url 'cal:kalender' "> Kalender </a>
 </div>
 
 {% if form.errors %}
@@ -31,4 +31,5 @@ Event
     <tr><td colspan="2"><button type="submit" class="btn btn-info right"> Submit </button></td></tr>
   </table>
 </form>
+{{ event.html|safe }}
 {% endblock %}
