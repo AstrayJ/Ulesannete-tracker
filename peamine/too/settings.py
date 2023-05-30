@@ -39,8 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "kalender",
+<<<<<<< HEAD
     
     
+    
+=======
+    'crispy_forms',
+    "crispy_bootstrap4",
+    "channels",
+>>>>>>> 91d21f0476f03e880c3fd1fb46e8b85f3313e11b
     
 
 ]
@@ -131,3 +138,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "/"
+
+
+
+# CELERY SETTINGS
+
+CELERY_BROKER_URL = "redis://127.0.0.1:6379"

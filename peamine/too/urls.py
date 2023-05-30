@@ -20,6 +20,8 @@ from django.urls import path, include
 from kalender.views import home_page_view
 from kalender.views import login_page_view
 from kalender.views import register_page_view
+from kalender.views import target_page
+from kalender.views import peale_input
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,21 +29,8 @@ urlpatterns = [
     path('homepage/', home_page_view),
     path("login/", login_page_view),
     path("register/", register_page_view),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    path("kalender/", include ('kal.urls')),
-=======
     path("kalender/", include('kalender.urls')),
->>>>>>> 7920171e3eedd96c60a6a26b57df0a6acc2a0401
-=======
-<<<<<<< HEAD
-=======
-    path("kalender/", include ('kal.urls'),
->>>>>>> f726452b778ad5e6e15ee4fe5a4249665ad5befb
->>>>>>> 80d43841a9ef19586ae3d60dd91f6ed00326450a
-=======
-    path("kalender/", include('kalender.urls')),
+    path("kalender/target-page/", target_page),
+    path("kalender/target-page/process-input.php", peale_input)
 
->>>>>>> 3c883802afcd7975f4329a199be082161f68836b
 ]
