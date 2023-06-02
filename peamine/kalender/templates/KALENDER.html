@@ -7,68 +7,114 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
-  <link rel="stylesheet" type="text/css" href="{'% static 'kalender/KALENDER.css' %}">
+  
   <title>{% block title %}Django Calendar App{% endblock %}</title>
 </head>
 <body>
   {% block content %}
   <!DOCTYPE html>
-<html>
-<head>
-  <title>Calendar</title>
-  <style>
-    table {
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 10px;
-      text-align: center;
-      border: 1px solid black;
-    }
-  </style>
-</head>
-<body>
-  <table>
-    <thead>
-      <tr>
-        <th colspan="7">May 2023</th>
-      </tr>
-      <tr>
-        <th>Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th>Sat</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>1</td>
-        <td>2</td>
-      </tr>
-      <!-- Continue adding rows for each week -->
-      <tr>
-        <td>29</td>
-        <td>30</td>
-        <td>31</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+  <html>
+  <head>
+    <title>Calendar with Redirect Buttons</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td {
+        border: 1px solid #ccc;
+        padding: 100px;
+        text-align: center;
+      }
+      td button {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>Calendar</caption>
+      <thead>
+        <tr>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+        </tr>
+      </thead>
+      <tbody id="calendar-body"></tbody>
+    </table>
+  
+    <script>
+      // Rest of the JavaScript code remains the same as the previous example
+    </script>
+  
+    <script>
+      // Function to generate the calendar
+      function generateCalendar() {
+        const calendarBody = document.getElementById("calendar-body");
+        const currentDate = new Date();
+        const currentMonth = currentDate.getMonth();
+        const currentYear = currentDate.getFullYear();
+  
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+  
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+          const row = document.createElement("tr");
+  
+          for (let j = 0; j < 7; j++) {
+            if (i === 0 && j < firstDay) {
+              const cell = document.createElement("td");
+              row.appendChild(cell);
+            } else if (date > daysInMonth) {
+              break;
+            } else {
+              const cell = document.createElement("td");
+              const button = document.createElement("button");
+              button.innerText = date;
+              button.addEventListener("click", function() {
+                redirectToPage(date);
+              });
+              cell.appendChild(button);
+              row.appendChild(cell);
+              date++;
+            }
+          }
+          calendarBody.appendChild(row);
+        }
+      }
+  
+      // Function to redirect to the page based on the date
+      function redirectToPage(date) {
+        const year = new Date().getFullYear();
+        const month = new Date().getMonth() + 1;
+        // Replace "target-page.html" with the actual URL of the page you want to redirect to, including any query parameters
+        window.location.href = `target-page`;
+      }
+  
+      // Generate the calendar when the page loads
+      generateCalendar();
+    </script>
+  </body>
+  </html>
+  
+  
 
   
  {% endblock %}
+
+  
+
+ 
+
+</body>
+</html>
