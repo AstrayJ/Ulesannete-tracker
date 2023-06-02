@@ -1,10 +1,9 @@
-from __future__ import unicode_literals
 from django.contrib import admin
 from .models import Event
-import datetime
-import calendar
-from django.urls import reverse
-from calendar import HTMLCalendar
-from django.utils.safestring import mark_safe
 
+<<<<<<< HEAD
  
+=======
+admin.site.register(Event)
+
+>>>>>>> 77919efb53f4e1f0bf695554822aac863573fad4
