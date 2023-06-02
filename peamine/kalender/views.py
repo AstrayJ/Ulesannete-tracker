@@ -19,6 +19,9 @@ def home_page_view(request):
 def login_page_view(request):
    return render(request, "index.html")
 
+def kalender_view(request):
+    return render(request, "KALENDER.HTML")
+
 
 def register_page_view(request):
    if request.method == "POST":
