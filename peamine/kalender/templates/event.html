@@ -24,7 +24,7 @@ Event
     {% endfor %}
 {% endif %}
 
-<form method="post">
+<form action="{% url 'kalender' %}">
   {% csrf_token %}
   <table class="form form-table">
     {{ form }}
