@@ -27,7 +27,7 @@ def register_page_view(request):
          return redirect("main:homepage")
       messages.error(request, "Unsuccessful registration. Invalid information.")
    form = NewUserForm()
-<<<<<<< HEAD
+
    return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 def index(request):
@@ -77,6 +77,6 @@ def target_page(request):
     
 def peale_input(request):
     return render(request, "pealeinput.html")
-=======
-   return render (request=request, template_name="main/register.html", context={"register_form":form})
->>>>>>> 50b9d17059731225f50ec31db7ceb18e9df78b43
+
+   
+
