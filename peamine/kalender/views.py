@@ -82,8 +82,6 @@ def target_page(request):
     
 def peale_input(request):
     return render(request, "pealeinput.html")
-<<<<<<< HEAD
-=======
     return render(request=request, template_name="main/register.html", context={"register_form":form})
 
 
@@ -133,6 +131,5 @@ def event(request, event_id=None):
     form = EventForm(request.POST or None, instance=instance)
     if request.POST and form.is_valid():
         form.save()
-        return HttpResponseRedirect(reverse('cal:kalender'))
+        return HttpResponseRedirect(reverse('kalender'))
     return render(request, 'event.html', {'form': form})
->>>>>>> 77919efb53f4e1f0bf695554822aac863573fad4

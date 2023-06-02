@@ -1,11 +1,6 @@
 from django.db import models
 from django.urls import reverse
-<<<<<<< HEAD
-
-
-=======
 from datetime import datetime
->>>>>>> 77919efb53f4e1f0bf695554822aac863573fad4
 
 class Event(models.Model):
     title = models.CharField(max_length=200)

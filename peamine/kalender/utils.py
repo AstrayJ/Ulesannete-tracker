@@ -2,8 +2,6 @@ from calendar import HTMLCalendar
 from datetime import datetime as dtime, date, time
 from .models import Event
  
-<<<<<<< HEAD
-=======
 
 
 class Calendar(HTMLCalendar):
@@ -42,4 +40,3 @@ class Calendar(HTMLCalendar):
 		for week in self.monthdays2calendar(self.year, self.month):
 			cal += '{self.formatweek(week, events)}\n'
 		return cal
->>>>>>> 77919efb53f4e1f0bf695554822aac863573fad4
