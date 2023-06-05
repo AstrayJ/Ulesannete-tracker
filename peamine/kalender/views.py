@@ -19,6 +19,9 @@ def home_page_view(request):
 def login_page_view(request):
    return render(request, "index.html")
 
+def kalender_view(request):
+    return render(request, "KALENDER.HTML")
+
 
 def register_page_view(request):
    if request.method == "POST":
@@ -30,6 +33,9 @@ def register_page_view(request):
          return redirect("main:homepage")
       messages.error(request, "Unsuccessful registration. Invalid information.")
    form = NewUserForm()
+
+
+
    return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 def index(request):
@@ -81,6 +87,13 @@ def peale_input(request):
     return render(request, "pealeinput.html")
     return render(request=request, template_name="main/register.html", context={"register_form":form})
 
+def kalender_view(request):
+    return render(request, "KALENDER.HTML")
+   
+
+
+    #return render(request=request, template_name="main/register.html", context={"register_form":form})
+
 
 def index(request):
     return HttpResponse('hello')
@@ -128,5 +141,6 @@ def event(request, event_id=None):
     form = EventForm(request.POST or None, instance=instance)
     if request.POST and form.is_valid():
         form.save()
-        return HttpResponseRedirect(reverse('cal:kalender'))
+        return HttpResponseRedirect(reverse('kalender'))
     return render(request, 'event.html', {'form': form})
+

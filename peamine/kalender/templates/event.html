@@ -6,7 +6,7 @@ Event
 
 {% block content %}
 <div class="clearfix">
-  <a class="btn btn-info left" href=" url 'cal:kalender' "> Kalender </a>
+  <a class="btn btn-info left" href="{% url 'kalender' %} "> Kalender </a>
 </div>
 
 {% if form.errors %}
@@ -24,7 +24,7 @@ Event
     {% endfor %}
 {% endif %}
 
-<form method="post">
+<form action="{% url 'kalender' %}">
   {% csrf_token %}
   <table class="form form-table">
     {{ form }}

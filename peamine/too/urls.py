@@ -22,14 +22,17 @@ from kalender.views import login_page_view
 from kalender.views import register_page_view
 from kalender.views import target_page
 from kalender.views import peale_input
+from kalender.views import kalender_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('homepage/', home_page_view),
-    path("login/", login_page_view),
+    path("", login_page_view),
     path("register/", register_page_view),
-    path("kalender/", include('kalender.urls')),
+    path("", include('kalender.urls')),
+    path("kalender/", target_page),
+    path("kalender/", kalender_view),
     path("kalender/target-page/", target_page),
     path("kalender/target-page/process-input.php", peale_input)
 
