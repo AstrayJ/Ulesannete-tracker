@@ -8,13 +8,32 @@ from django.utils.safestring import mark_safe
 from django.shortcuts import  render, redirect
 from .forms import NewUserForm
 from .models import *
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
 
+def kalender_page_view(request):
+    return render(request, "KALENDER.html")
  
 def home_page_view(request):
    return render(request,"LandingPage.html")
 
 def login_page_view(request):
-   return render(request, "index.html")
+    if request.method == "POST":
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}.")
+                return redirect("main:homepage")
+            else:
+                messages.error(request,"Invalid username or password.")
+        else:
+            messages.error(request,"Invalid username or password.")
+    form = AuthenticationForm()
+    return render(request=request, template_name="main/login.html", context={"login_form":form})
 
 
 def register_page_view(request):
@@ -24,10 +43,10 @@ def register_page_view(request):
          user = form.save()
          login(request, user)
          messages.success(request, "Registration successful." )
-         return redirect("main:homepage")
+         return redirect("homepage")
       messages.error(request, "Unsuccessful registration. Invalid information.")
    form = NewUserForm()
-<<<<<<< HEAD
+
    return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 def index(request):
@@ -77,6 +96,10 @@ def target_page(request):
     
 def peale_input(request):
     return render(request, "pealeinput.html")
-=======
-   return render (request=request, template_name="main/register.html", context={"register_form":form})
->>>>>>> 50b9d17059731225f50ec31db7ceb18e9df78b43
+    return render (request=request, template_name="main/register.html", context={"register_form":form})
+
+from django.template import RequestContext
+def home(request):
+    return render(request, 'kalender/index.html', {
+        'room_name': "broadcast"
+    })
