@@ -5,14 +5,12 @@ from django.utils.safestring import mark_safe
 from django.shortcuts import redirect
 from .forms import NewUserForm
 from .models import *
-<<<<<<< HEAD
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 
 def kalender_page_view(request):
     return render(request, "KALENDER.html")
  
-=======
 from datetime import datetime, timedelta, date
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
@@ -21,7 +19,7 @@ from django.urls import reverse
 import calendar
 from .utils import Calendar
 from .forms import EventForm
->>>>>>> 047a75789cc2f142f72fbf8d03ffb66d7c7032c6
+
 def home_page_view(request):
    return render(request,"LandingPage.html")
 
@@ -57,12 +55,6 @@ def register_page_view(request):
          return redirect("homepage")
       messages.error(request, "Unsuccessful registration. Invalid information.")
    form = NewUserForm()
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 047a75789cc2f142f72fbf8d03ffb66d7c7032c6
    return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 def index(request):
@@ -112,7 +104,6 @@ def target_page(request):
     
 def peale_input(request):
     return render(request, "pealeinput.html")
-<<<<<<< HEAD
     return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 from django.template import RequestContext
@@ -120,7 +111,6 @@ def home(request):
     return render(request, 'kalender/index.html', {
         'room_name': "broadcast"
     })
-=======
     return render(request=request, template_name="main/register.html", context={"register_form":form})
 
 def kalender_view(request):
@@ -179,5 +169,3 @@ def event(request, event_id=None):
         form.save()
         return HttpResponseRedirect(reverse('kalender'))
     return render(request, 'event.html', {'form': form})
-
->>>>>>> 047a75789cc2f142f72fbf8d03ffb66d7c7032c6
