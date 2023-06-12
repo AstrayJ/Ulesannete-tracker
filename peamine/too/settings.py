@@ -39,10 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "kalender",
+<<<<<<< HEAD
     'crispy_forms',
     "crispy_bootstrap4",
     "channels",
+=======
+>>>>>>> 047a75789cc2f142f72fbf8d03ffb66d7c7032c6
 ]
+
+'crispy_forms'
+"crispy_bootstrap4"
+"channels"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -113,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Tallinn'
 
 USE_I18N = True
 

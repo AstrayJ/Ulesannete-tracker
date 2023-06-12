@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Kalender
+{% endblock %}
+
+{% block content %}
+<div class="clearfix">
+	<a class="btn btn-info left" href="{% url 'kalender' %}?{{ prev_month }}"> Previous Month </a>
+	<a class="btn btn-info right" href="{% url 'kalender' %}?{{ next_month }}"> Next Month </a>
+	<a class="btn btn-info right" href="{% url 'Uus' %}"> New Event </a>
+</div>
+
+{{ calendar }}
+{{ KALENDER2|safe }}
+{% endblock %}
