@@ -1,0 +1,12 @@
+Sisse logides suundute kodulehel. Kodulehel vajutades "planeerima" saate minna kalendrisse, kus saate lisada sündmuse nupuga "Add Event" 
+ja liikuda kuude vahel nupudega "Previous Month" ja "Next Month". Kui kalender töötaks hästi redigeeriks see tagasi kodulehele. Vajutadaes 
+nuppu "Log Out" saate minna "Log In" lehele.
+
+Töötamiseks on vaja:
+
+pip install django
+pip install channels
+pip install crispy_forms
+pip install crispy_bootstrap4
+
+

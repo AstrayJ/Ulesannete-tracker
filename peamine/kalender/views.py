@@ -5,6 +5,12 @@ from django.utils.safestring import mark_safe
 from django.shortcuts import redirect
 from .forms import NewUserForm
 from .models import *
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
+
+def kalender_page_view(request):
+    return render(request, "KALENDER.html")
+ 
 from datetime import datetime, timedelta, date
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
@@ -13,11 +19,27 @@ from django.urls import reverse
 import calendar
 from .utils import Calendar
 from .forms import EventForm
+
 def home_page_view(request):
    return render(request,"LandingPage.html")
 
 def login_page_view(request):
-   return render(request, "index.html")
+    if request.method == "POST":
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}.")
+                return redirect("main:homepage")
+            else:
+                messages.error(request,"Invalid username or password.")
+        else:
+            messages.error(request,"Invalid username or password.")
+    form = AuthenticationForm()
+    return render(request=request, template_name="main/login.html", context={"login_form":form})
 
 def kalender_view(request):
     return render(request, "KALENDER.HTML")
@@ -30,12 +52,9 @@ def register_page_view(request):
          user = form.save()
          login(request, user)
          messages.success(request, "Registration successful." )
-         return redirect("main:homepage")
+         return redirect("http://127.0.0.1:8000/homepage/")
       messages.error(request, "Unsuccessful registration. Invalid information.")
    form = NewUserForm()
-
-
-
    return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 def index(request):
@@ -85,6 +104,13 @@ def target_page(request):
     
 def peale_input(request):
     return render(request, "pealeinput.html")
+    return render (request=request, template_name="main/register.html", context={"register_form":form})
+
+from django.template import RequestContext
+def home(request):
+    return render(request, 'kalender/index.html', {
+        'room_name': "broadcast"
+    })
     return render(request=request, template_name="main/register.html", context={"register_form":form})
 
 def kalender_view(request):
@@ -143,4 +169,3 @@ def event(request, event_id=None):
         form.save()
         return HttpResponseRedirect(reverse('kalender'))
     return render(request, 'event.html', {'form': form})
-

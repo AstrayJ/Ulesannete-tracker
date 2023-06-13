@@ -39,11 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "kalender",
-]
+    'crispy_forms',
+    "crispy_bootstrap4",
+    "channels",
+    ]
 
-'crispy_forms'
-"crispy_bootstrap4"
-"channels"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -76,6 +76,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'too.wsgi.application'
+ASGI_APPLICTION = 'too.asgi.application'
 
 
 # Database
@@ -131,9 +132,21 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "/"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
 
 
 
 # CELERY SETTINGS
 
 CELERY_BROKER_URL = "redis://127.0.0.1:6379"
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TASK_SERIALIZER = "json"
+CELERY_TIMEZONE = "Estonia"
